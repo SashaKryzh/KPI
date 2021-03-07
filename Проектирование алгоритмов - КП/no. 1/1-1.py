@@ -7,7 +7,7 @@ def figure():
     turtle.stamp()
     turtle.shape("classic")
     turtle.shapesize(1, 1)
-    
+
     steps = [40, 10]
     for i in range(19):
         index = i % 2

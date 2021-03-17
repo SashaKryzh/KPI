@@ -1,4 +1,8 @@
 .venv
 .vscode
 
+# Python
 test.py
+
+# CPP
+a.out

@@ -8,10 +8,6 @@ def func(n):
 
 
 if __name__ == "__main__":
-    func(-5)
-    print()
-    func(0)
-    print()
     func(1)
     print()
     func(5)

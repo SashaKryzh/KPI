@@ -1,5 +1,4 @@
 
-
 def func(w):
     if len(w) == 0 or len(w) == 1:
         return True

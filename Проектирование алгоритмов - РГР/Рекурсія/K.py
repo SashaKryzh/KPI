@@ -3,7 +3,7 @@ def func():
     n = int(input())
     if n > 0:
         if n % 2 == 1:
-            print(n)
+            print(' ', n)
         func()
 
 

@@ -1,15 +1,5 @@
 #include <iostream>
 
-bool isUnderLine(int x, int y)
-{
-	return y <= -x;
-}
-
-bool isInCircle(int radius, int x, int y)
-{
-	return sqrt(pow(x, 2) + pow(y, 2)) <= radius;
-}
-
 int main()
 {
 	float radius, x, y;
@@ -23,14 +13,16 @@ int main()
 	std::cout << "y = ";
 	std::cin >> y;
 
-	if (isUnderLine(x, y) && isInCircle(radius, x, y))
+	if (y <= -x)
 	{
-		std::cout << "Yes" << std::endl;
+		if (sqrt(pow(x, 2) + pow(y, 2)) <= radius)
+		{
+			std::cout << "Yes" << std::endl;
+			return 0;
+		}
 	}
-	else
-	{
-		std::cout << "No" << std::endl;
-	}
+
+	std::cout << "No" << std::endl;
 
 	return 0;
 }

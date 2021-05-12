@@ -6,3 +6,7 @@ test.py
 
 # CPP
 a.out
+test.cpp
+
+# Other
+*-k.*

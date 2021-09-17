@@ -7,6 +7,7 @@ test.py
 # CPP
 a.out
 test.cpp
+*.dSYM
 
 # Other
 *-k.*

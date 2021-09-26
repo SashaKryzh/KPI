@@ -20,6 +20,7 @@ int main(void)
 	MedicineType::type type;
 	
 	unsigned short shType;
+	printf("HOSPITAL - 0\nCLINIC - 1\nAMBULATORY - 2\nPHARMACY - 3\nLABORATORY - 4\nURGENTCARE - 5\n\nSelect type: ");
 	scanf("%hu", &shType);
 	type = shType < MedicineType::ERROR ? (MedicineType::type)shType : MedicineType::ERROR;
 	

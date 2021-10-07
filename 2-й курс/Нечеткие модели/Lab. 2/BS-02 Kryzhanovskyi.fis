@@ -1,0 +1,39 @@
+[System]
+Name='BS-02 Kryzhanovskyi'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x1'
+Range=[0 1]
+NumMFs=2
+MF1='a1':'trimf',[-0.1 0 1]
+MF2='a2':'trimf',[0 1 1.1]
+
+[Input2]
+Name='x2'
+Range=[0 1]
+NumMFs=2
+MF1='a1':'trimf',[-0.1 0 1]
+MF2='a2':'trimf',[0 1 1.1]
+
+[Output1]
+Name='y'
+Range=[0 1]
+NumMFs=2
+MF1='b11':'trimf',[-0.1 0 1]
+MF2='b22':'trimf',[0 1 1.1]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+2 1, 2 (1) : 1
+2 2, 2 (1) : 1

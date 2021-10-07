@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-void minmaxIndex(int *arr, int size, int &minIndex, int &maxIndex)
+void minmaxIndex(int arr[], int size, int &minIndex, int &maxIndex)
 {
 	minIndex = 0;
 	int min = INT_MAX;
@@ -23,30 +23,22 @@ void minmaxIndex(int *arr, int size, int &minIndex, int &maxIndex)
 	}
 }
 
-void printArray(int *arr, int size)
+void printArray(int arr[], int size)
 {
+	std::cout << "Your array: ";
 	for (int i = 0; i < size; ++i)
 		std::cout << arr[i] << " ";
 	std::cout << std::endl;
 }
 
-int *inputArray(int &size)
+void inputArray(int arr[], int &size)
 {
-	int *arr;
-
-	std::cout << "Enter array size: ";
-	std::cin >> size;
-
-	arr = new int[size];
-
 	std::cout << "Enter " << size << " numbers seperated by a new line:" << std::endl;
 	for (int i = 0; i < size; ++i)
 		std::cin >> arr[i];
-
-	return arr;
 }
 
-int calculateProduct(int *arr, int minIndex, int maxIndex)
+int calculateProduct(int arr[], int minIndex, int maxIndex)
 {
 	if (maxIndex < minIndex)
 	{
@@ -68,9 +60,9 @@ int calculateProduct(int *arr, int minIndex, int maxIndex)
 
 int main()
 {
-	int *arr;
-	int size;
-	arr = inputArray(size);
+	int arr[10];
+	int size = 10;
+	inputArray(arr, size);
 
 	int minIndex = 0, maxIndex = 0;
 	minmaxIndex(arr, size, minIndex, maxIndex);
@@ -81,6 +73,5 @@ int main()
 	std::cout << "The product of numbers between min and max (" << minIndex << " and " << maxIndex << " indexes): "
 			  << product << std::endl;
 
-	delete arr;
 	return 0;
 }

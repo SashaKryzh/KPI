@@ -24,7 +24,10 @@ bool create_random_file()
 	FILE *f = fopen(newname, "wb");
 	srand(time(0));
 	for (int i = 0; i < 10; i++)
-		fputc(rand() % 10, f);
+	{
+		char n = rand() % 10;
+		fwrite(&n, sizeof(n), 1, f);
+	}
 	fclose(f);
 	return true;
 }
@@ -47,9 +50,8 @@ bool show_file(const char *filename)
 		return false;
 	}
 	std::cout << filename << ": ";
-	char c[2];
-	while (fgets(c, 2, f) != NULL)
-		std::cout << static_cast<int>(*c) << " ";
+	for (char c; fread(&c, sizeof(c), 1, f);)
+		std::cout << static_cast<int>(c) << " ";
 	std::cout << std::endl;
 	fclose(f);
 	return true;
@@ -81,7 +83,7 @@ bool process(const char *filename_1, const char *filename_2)
 		{
 			if (i != j && f1_data[i] == f1_data[j])
 			{
-				fputc(f1_data[i], f2);
+				fwrite(&f1_data[i], sizeof(f1_data[0]), 1, f2);
 				break;
 			}
 		}
